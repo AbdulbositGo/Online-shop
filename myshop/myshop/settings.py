@@ -122,3 +122,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CART_SESSION_ID = 'cart'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+STRIPE_PUBLISHABLE_KEY = 'pk_test_51PLHTJ03z3rij4jycbkOoJKarRHLPZ4kFc4aL9b7Fte6DSi9kpom1okDKV8wGkruH49PGmyclGXsvNOU3k8vHxs400ibKUIH9M' # Publishable key
+STRIPE_SECRET_KEY = 'sk_test_51PLHTJ03z3rij4jyCNsa28sDdjzSPIGoSgtszlVZ3OyMOnmnZwAsFXqmTpL8LBtT5wl3ZGSlM1lt1XwuCXI56ICU00ePyboiWV' # Secret key
+STRIPE_API_VERSION = '2022-08-01'
