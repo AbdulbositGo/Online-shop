@@ -45,4 +45,10 @@ def payment_process(request):
         print(locals())
         return render(request, 'payment/process.html', locals())
 
-    
+
+def payment_complated(request):
+    return render(request, 'payment/complated.html')
+
+
+def payment_canceled(request):
+    return render(request, 'payment/canceled.html')
