@@ -26,7 +26,7 @@ class Order(models.Model):
     def __str__(self):
         return f"Order {self.id}"
     
-    def get_total_price(self):
+    def get_total_cost(self):
         return sum(item.get_cost() for item in self.items.all())
     
     @property
@@ -37,9 +37,8 @@ class Order(models.Model):
             path = '/test/'
         else:
             path = '/'
-        url = f'https://dashboard.stripe.com{path}payments/{self.stripe_id}'
 
-        return mark_safe(f'<a href="{url}" target="_blank">{self.stripe_id}</a>')
+        return f'https://dashboard.stripe.com{path}payments/{self.stripe_id}'
     
 class OrderItem(models.Model):
     order = models.ForeignKey(Order,
