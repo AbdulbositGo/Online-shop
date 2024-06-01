@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+from django.utils.safestring import mark_safe
 
 from shop.models import Product
 
@@ -28,6 +29,7 @@ class Order(models.Model):
     def get_total_price(self):
         return sum(item.get_cost() for item in self.items.all())
     
+    @property
     def get_stripe_url(self):
         if not self.stripe_id:
             return ''
@@ -35,8 +37,10 @@ class Order(models.Model):
             path = '/test/'
         else:
             path = '/'
-        return f'https://dashboard.stripe.com{path}payments/{self.stripe_id}'
+        url = f'https://dashboard.stripe.com{path}payments/{self.stripe_id}'
 
+        return mark_safe(f'<a href="{url}" target="_blank">{self.stripe_id}</a>')
+    
 class OrderItem(models.Model):
     order = models.ForeignKey(Order,
                               related_name='items',
