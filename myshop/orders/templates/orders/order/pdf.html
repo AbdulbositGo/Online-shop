@@ -24,7 +24,7 @@
       </thead>
       <tbody>
         {% for item in order.items.all %}
-          Managing Payments and Orders 434<tr class="row{% cycle '1' '2' %}">
+          <tr class="row{% cycle '1' '2' %}">
             <td>{{ item.product.name }}</td>
             <td class="num">${{ item.price }}</td>
             <td class="num">{{ item.quantity }}</td>
@@ -38,9 +38,7 @@
       </tbody>
     </table>
 
-    <span class="{% if order.paid %}
-
-      {% endif %}">
+    <span class="{% if order.paid %}paid{% endif %}">
       {% if order.paid %}
         Paid
       {% else %}
