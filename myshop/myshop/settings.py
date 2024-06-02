@@ -110,8 +110,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR / 'static'
-# STATICFILES_DIRS = [BASE_DIR.joinpath('static'),]
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_DIRS = [BASE_DIR.joinpath('static'),]
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
@@ -128,4 +128,3 @@ STRIPE_PUBLISHABLE_KEY = 'pk_test_51PLHTJ03z3rij4jycbkOoJKarRHLPZ4kFc4aL9b7Fte6D
 STRIPE_SECRET_KEY = 'sk_test_51PLHTJ03z3rij4jyCNsa28sDdjzSPIGoSgtszlVZ3OyMOnmnZwAsFXqmTpL8LBtT5wl3ZGSlM1lt1XwuCXI56ICU00ePyboiWV' # Secret key
 STRIPE_API_VERSION = '2022-08-01'
 STRIPE_WEBHOOK_SECRET = 'whsec_fc6f6a6b6152432bbd83996b28a9ce325cebe19d3f1945404444d7bd7f1dfe67'
-
