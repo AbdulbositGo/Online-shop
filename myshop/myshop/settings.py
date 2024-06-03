@@ -26,10 +26,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'shop.apps.ShopConfig',
     'cart.apps.CartConfig',
+    'coupons.app.CouponsConfig',
     'orders.apps.OrdersConfig',
     'payment.apps.PaymentConfig',
+    'shop.apps.ShopConfig',
 ]
 
 MIDDLEWARE = [
@@ -122,8 +123,10 @@ MEDIA_ROOT = BASE_DIR / 'media'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CART_SESSION_ID = 'cart'
+
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+# Stripe Settings
 STRIPE_PUBLISHABLE_KEY = 'pk_test_51PLHTJ03z3rij4jycbkOoJKarRHLPZ4kFc4aL9b7Fte6DSi9kpom1okDKV8wGkruH49PGmyclGXsvNOU3k8vHxs400ibKUIH9M' # Publishable key
 STRIPE_SECRET_KEY = 'sk_test_51PLHTJ03z3rij4jyCNsa28sDdjzSPIGoSgtszlVZ3OyMOnmnZwAsFXqmTpL8LBtT5wl3ZGSlM1lt1XwuCXI56ICU00ePyboiWV' # Secret key
 STRIPE_API_VERSION = '2022-08-01'
